@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  max-width: 5xl;
+  margin: auto;
+  padding: 10px;
+}
+
+header {
+  padding: 4px;
+  margin-bottom: 10px;
+  background-color: #EF4444;
+}
+
+header .text-xl {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #FFF;
+}
+
+main {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  max-width: 4xl;
+  padding: 10px;
+}
+
+main h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+main p {
+  margin-bottom: 4px;
+}
+
+main form {
+  margin-top: 4px;
+}
+
+main input[type="url"],
+main select {
+  width: 100%;
+  border: 2px solid #E5E7EB;
+  border-radius: 0.375rem;
+  padding: 0.75rem;
+  color: #4B5563;
+  margin-bottom: 5px;
+}
+
+main button {
+  background-color: #4B5563;
+  border-radius: 0.375rem;
+  width: 100%;
+  color: #FFF;
+  padding: 0.75rem 1rem;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+main button:hover {
+  background-color: #000;
+}
+
+main img.w-1, main img.md:w-full {
+  width: 50%;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+#generated {
+  max-width: 5xl;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#spinner {
+  display: none;
+}
+
+#qrcode {
+  margin: auto;
+}
+
+#spinner svg.inline {
+  margin-right: 2px;
+  width: 24px;
+  height: 24px;
+  color: #E5E7EB;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#QrCode {
+    position: relative;
+}
+.qrcode {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+#logo {
+
+    position: absolute;
+    top: 35%;
+    left: 35%;
+    display: none;
+    width: 30%;
+    height: 30%;
+}
+
+#download {
+    display: none;
+}
