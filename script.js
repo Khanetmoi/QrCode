@@ -2,15 +2,65 @@ const form = document.getElementById("generate-form");
 const qr = document.getElementById("qrcode");
 const logo = document.getElementById("logo")
 const downloadB = document.getElementById("download")
+const table = document.getElementById("table");
+
+
+
+let fetchedData = [];
+
+
+const getData = async ()=>{
+  const response = await fetch("https://app.sipconsult.net/api/api/tables");
+   const data = await response.json();
+   const  value = data.data;
+   console.log(value)
+   value.forEach((item)=>{
+    let option = document.createElement("option");
+       option.innerHTML = item.name;
+       option.id = item.externalId;
+       table.appendChild(option);
+  })
+}
+
+getData();
+  
+  // .then(response => {
+  //   if (!response.ok) {
+  //     throw new Error("Network response was not OK");
+  //   }
+  //   return response.json();
+  // })
+  // .then(Data => {
+  //  // console.log(data.data)
+  //  Data.data.forEach((item)=>{
+  //   console.log(item.tableCode)
+  //    let option = document.createElement("option");
+  //    option.innerHTML = item.name;
+  //    option.id = item.tableCode;
+  //    table.appendChild(option);
+
+  //    console.log(option.value)
+  //  })
+   
+  // })
+  // .catch(error => {
+  //   // Handle any errors that occurred during the request
+  //   console.error(error);
+  // });
+ 
+
+ 
 
 // Button submit
 const onGenerateSubmit = (e) => {
   e.preventDefault();
 
   clearUI();
-  const url = document.getElementById("url").value;
+  
   const size = document.getElementById("size").value;
-
+  
+  let op = table.options[table.selectedIndex].id;
+  let url = 'https://app.sipconsult.net/frankies/?param1='+op;
   // Validate url
   if (url === "") {
     alert("Please enter a URL");
